@@ -31,7 +31,5 @@ This **To-Do List Application** is a web-based productivity tool designed to hel
 1. **Add a Task**: Type in the task description and hit "Add Task."
 2. **Mark as Completed**: Toggle the checkbox to mark tasks as complete.
 3. **Edit or Delete**: Click on the "Edit" or "Delete" icons next to each task.
-4. **Filter Tasks**: Use the filter options to sort tasks by status.
-5. **Toggle Theme**: Use the theme switcher to switch between light and dark modes.
 
 
