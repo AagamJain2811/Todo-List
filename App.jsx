@@ -1,23 +1,18 @@
 import { useState, useEffect } from 'react'
 import {TodoProvider} from './context'
-import TodoForm from './components/TodoForm'
-import TodoItem from './components/TodoItem'
+import TodoForm from './component/TodoForm'
+import TodoItem from './component/TodoItem'
 
-//USE CONSOLE LOG TO DEBUG AND TO UNDERSTAND ALSO.
+
 
 function App() {
   const [todos, setTodos] = useState([])
   const addTodo = (todo) => {
     setTodos((prev) => [{...todo}, ...prev])  
-    // setTodos((prev) =>{
-    //   console.log(prev)
-    //   return [{...todo}, ...prev]
-    // } ) 
-
   }
 
   const updateTodo = (id, todo) => {
-    setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo ))) //ye smajhna hai ki prevTodo me kya value hai aur prev me bhi.
+    setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo ))) 
   }
 
   const deleteTodo = (id) => {
@@ -25,16 +20,16 @@ function App() {
   }
 
   const toggleComplete = (id) => {
-    //console.log(id);
+ 
     setTodos((prev) => 
     prev.map((prevTodo) => 
       prevTodo.id === id ? { ...prevTodo, completed: !prevTodo.completed } : prevTodo))
   }
 
-  //Local Storage accept as well as give string type data.
+
   
   useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todos")) //localStorage.getItem("key")
+    const todos = JSON.parse(localStorage.getItem("todos"))
     
     if (todos && todos.length > 0) {
       setTodos(todos)
@@ -42,10 +37,9 @@ function App() {
   }, [])
   
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos)) //localStorage.setItem("key", "value")
+    localStorage.setItem("todos", JSON.stringify(todos)) 
   }, [todos])
-  
-  //ye samajhna hai ki local storage me pehle getItem kyo liya, setItem kyo ni liya.
+ 
 
 
 
@@ -55,11 +49,11 @@ function App() {
                 <div className="bg-[#101f35] w-full max-w-2xl mx-auto shadow-md shadow-[#3d4e6b] rounded-lg px-4 py-3 text-white">
                     <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
                     <div className="mb-4 ">
-                        {/* Todo form goes here */} 
+                    
                         <TodoForm />
                     </div>
                     <div className="flex flex-wrap gap-y-3">
-                        {/*Loop and Add TodoItem here */}
+                      
                         {todos.map((todo) => (
                           <div key={todo.id}
                           className='w-full'
