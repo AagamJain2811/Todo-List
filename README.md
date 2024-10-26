@@ -5,8 +5,6 @@ This **To-Do List Application** is a web-based productivity tool designed to hel
 
 ### Key Features:
 - **Task Creation, Editing, and Deletion**: Users can add new tasks, edit existing ones, and remove completed or unnecessary tasks.
-- **Real-Time Task Filtering and Sorting**: Tasks can be filtered by categories like "Pending," "Completed," or "Priority" status.
-- **Dark/Light Mode**: Using Tailwind CSS and Context API, the app offers theme switching, allowing users to choose between light and dark modes.
 - **Persistent State**: Utilizes local storage to retain tasks even after the page is refreshed or the browser is closed.
 - **Responsive Design**: Tailwind CSS makes the application responsive across various devices and screen sizes.
 
