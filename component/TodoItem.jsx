@@ -12,7 +12,6 @@ function TodoItem({ todo }) {
         updateTodo(todo.id, {...todo, todo: todoMsg})
         setIsTodoEditable(false)
     }
-    //edit wale function me setIsTodoEditable false kyo kiya hai pehle se ye samajh ni aa ra.
 
     const toggleCompleted = () => {
         toggleComplete(todo.id)
@@ -39,11 +38,11 @@ function TodoItem({ todo }) {
                 onChange={(e) => setTodoMsg(e.target.value)}
                 readOnly={!isTodoEditable}
             />
-            {/* Edit, Save Button */}
+            
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
                 onClick={() => {
-                    // if (todo.completed) return; //already defined disable condition below..
+                    
 
                     if (isTodoEditable) {
                         editTodo();
@@ -53,7 +52,7 @@ function TodoItem({ todo }) {
             >
                 {isTodoEditable ? "📁" : "✏️"}
             </button>
-            {/* Delete Todo Button */}
+           
             <button
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
                 onClick={() => deleteTodo(todo.id)}
